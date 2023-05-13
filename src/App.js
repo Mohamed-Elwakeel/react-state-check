@@ -6,7 +6,7 @@ function App() {
   const [isEnabled, setIsEnabled] = useState(false);
 
   return (
-    <div>
+    <div className="App">
       {isEnabled && (
         <div>
           <h1>FullName: Mohamed Hassan Elwakeel</h1>
@@ -19,7 +19,9 @@ function App() {
         </div>
       )}
 
-      <button onClick={() => setIsEnabled(!isEnabled)}>Toggle State</button>
+      <button onClick={() => setIsEnabled(!isEnabled)} role="button">
+        Toggle State
+      </button>
     </div>
   );
 }
