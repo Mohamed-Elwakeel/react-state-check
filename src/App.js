@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import ME from "../src/assets/me.jpg";
 
 function App() {
+  const [isEnabled, setIsEnabled] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {isEnabled && (
+        <div>
+          <h1>FullName: Mohamed Hassan Elwakeel</h1>
+          <h2>Profession: Civil Engineer</h2>
+          <p>
+            Bio: A civil engineer graduate who is aspiring to be a fullstack web
+            developer.
+          </p>
+          <img src={ME} alt="Photo of me!!" />
+        </div>
+      )}
+
+      <button onClick={() => setIsEnabled(!isEnabled)} role="button">
+        Toggle State
+      </button>
     </div>
   );
 }
